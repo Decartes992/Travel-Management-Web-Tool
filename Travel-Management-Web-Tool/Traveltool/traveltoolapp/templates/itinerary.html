@@ -1,0 +1,44 @@
+{% extends "base.html" %}  <!-- Extends the base template -->
+{% load static %}  <!-- Loads the static files -->
+
+{% block content %}  <!-- Content block that will be inserted into the base template -->
+<div class="container transparent-bg">  <!-- Container with a semi-transparent background -->
+    <h1>Travel Itineraries</h1>  <!-- Page title -->
+    <div class="row">  <!-- Bootstrap row -->
+        <div class="col-md-12">  <!-- Bootstrap column that takes up the whole row -->
+            <table class="table table-striped">  <!-- Striped table -->
+                <thead>  <!-- Table header -->
+                    <tr>  <!-- Table row -->
+                        <!-- Table headers -->
+                        <th scope="col">Departure</th>
+                        <th scope="col">Return</th>
+                        <th scope="col">City</th>
+                        <th scope="col">Country</th>
+                        <th scope="col">Hotel Name</th>
+                        <th scope="col">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>  <!-- Table body -->
+                    {% for itinerary in itineraries %}  <!-- Loop over each itinerary -->
+                    <tr>  <!-- Table row for each itinerary -->
+                        <!-- Table data for each itinerary -->
+                        <td>{{ itinerary.departure_date }}</td>
+                        <td>{{ itinerary.return_date }}</td>
+                        <td>{{ itinerary.destination.city }}</td>
+                        <td>{{ itinerary.destination.country }}</td>
+                        <td>{{ itinerary.hotel.name }}</td>
+                        <td>
+                            <!-- Edit and Delete buttons for each itinerary -->
+                            <a href="{% url 'edit_itinerary' itinerary.id %}" class="btn btn-primary">Edit</a>
+                            <a href="{% url 'delete_itinerary' itinerary.id %}" class="btn btn-danger">Delete</a>
+                        </td>
+                    </tr>
+                    {% endfor %}  <!-- End of the loop -->
+                </tbody>
+            </table>
+            <!-- Add Itinerary button -->
+            <a href="{% url 'add_itinerary' %}" class="btn btn-success">Add Itinerary</a>
+        </div>
+    </div>
+</div>
+{% endblock %}  <!-- End of the content block -->

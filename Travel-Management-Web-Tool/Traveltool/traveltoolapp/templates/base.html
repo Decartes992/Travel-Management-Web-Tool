@@ -1,0 +1,86 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      {% block title %}  <!-- Title block that can be overridden in child templates -->
+        Django App
+      {% endblock %}
+    </title>
+    <!-- Link to Bootstrap CSS for styling -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"  rel="stylesheet" />
+    <style>
+      /* Styles for the body of the page */
+      body {
+        color: white;
+        background: url('{% static "images/background.jpg" %}') no-repeat center center fixed; 
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+      }
+
+      /* Styles for the navigation bar */
+      .navbar {
+        background-color: black;
+      }
+
+      /* Styles for the navigation bar text */
+      .navbar-brand,
+      .navbar-nav .nav-link {
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation bar -->
+    <nav class="navbar navbar-expand-lg">
+      <!-- Brand/logo -->
+      <button class="navbar-brand btn btn-dark" onclick="location.href='{% url 'home' %}'">Travel Logger</button>
+      <!-- Button for collapsing navigation bar in smaller screens -->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+      <!-- Navigation links -->
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="{% url 'itinerary_list' %}">Itinerary List</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'about' %}">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'contact' %}">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Main content block that can be overridden in child templates -->
+    <div class="container">{% block content %} {% endblock %}</div>
+    <!-- jQuery and Bootstrap JS for functionality -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" ></script>
+  </body>
+</html>
+
+<style>
+  /* Styles for elements with the transparent-bg class */
+  .transparent-bg {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+  }
+
+  /* Styles for jumbotron with the transparent-bg class */
+  .jumbotron.transparent-bg {
+    padding: 35px;
+  }
+  
+  /* Styles for table inside elements with the transparent-bg class */
+  .transparent-bg table {
+    color: white;
+  }
+</style>

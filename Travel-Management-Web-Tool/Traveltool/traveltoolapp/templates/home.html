@@ -1,0 +1,34 @@
+{% extends "base.html" %}  <!-- Extends the base template -->
+
+{% block title %}  <!-- Title block that will be inserted into the base template -->
+  Home Page
+{% endblock %}
+
+{% block content %}  <!-- Content block that will be inserted into the base template -->
+  <div class="jumbotron text-center transparent-bg">  <!-- Jumbotron with a semi-transparent background and centered text -->
+    <h1>Welcome to Travel Logger!</h1>  <!-- Page title -->
+    <p>Travel Logger is a web application designed to make planning your travels easier. You can create itineraries, add destinations, and manage your travel plans all in one place.</p>  <!-- Page description -->
+    <a href="{% url 'itinerary_list' %}" class="btn btn-primary">View Itineraries</a>  <!-- Button that redirects to the itinerary list -->
+  </div>
+
+  <div class="container">  <!-- Container for the About Us and Contact Us sections -->
+    <div class="row">  <!-- Bootstrap row -->
+      <div class="col-sm-6">  <!-- Bootstrap column for the About Us section -->
+        <div class="transparent-bg">  <!-- Div with a semi-transparent background -->
+          <h2>About Us</h2>  <!-- Section title -->
+          <p>Learn more about Travel Logger and how it can help you plan your travels.</p>  <!-- Section description -->
+          <a href="{% url 'about' %}" class="btn btn-info">About Us</a>  <!-- Button that redirects to the About Us page -->
+        </div>
+      </div>
+      <div class="col-sm-6">  <!-- Bootstrap column for the Contact Us section -->
+        <div class="transparent-bg">  <!-- Div with a semi-transparent background -->
+          <h2>Contact Us</h2>  <!-- Section title -->
+          <p>Have questions or feedback? We'd love to hear from you.</p><br>  <!-- Section description -->
+          <a href="{% url 'contact' %}" class="btn btn-info">Contact Us</a>  <!-- Button that redirects to the Contact Us page -->
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}  <!-- End of the content block -->
+
+

@@ -1,0 +1,40 @@
+{% extends 'base.html' %}  <!-- Extends the base template -->
+
+{% block title %}  <!-- Title block that will be inserted into the base template -->
+  Edit Itinerary
+{% endblock %}
+
+{% block content %}  <!-- Content block that will be inserted into the base template -->
+  <h1>Edit Itinerary</h1>  <!-- Page title -->
+  <form method="post">  <!-- Form for editing an itinerary -->
+    {% csrf_token %}  <!-- CSRF token for security -->
+    <div class="form-group">  <!-- Form group for the city field -->
+      <label for="city">City</label>  <!-- Label for the city field -->
+      <input type="text" class="form-control" id="city" name="city" value="{{ itinerary.destination.city }}">  <!-- Input for the city field with the current city as the default value -->
+    </div>
+    <div class="form-group">  <!-- Form group for the country field -->
+      <label for="country">Country</label>  <!-- Label for the country field -->
+      <input type="text" class="form-control" id="country" name="country" value="{{ itinerary.destination.country }}">  <!-- Input for the country field with the current country as the default value -->
+    </div>
+    <div class="form-group">  <!-- Form group for the departure date field -->
+      <label for="departure_date">Departure Date</label>  <!-- Label for the departure date field -->
+      <input type="date" class="form-control" id="departure_date" name="departure_date" value="{{ itinerary.departure_date }}">  <!-- Input for the departure date field with the current departure date as the default value -->
+    </div>
+    <div class="form-group">  <!-- Form group for the return date field -->
+      <label for="return_date">Return Date</label>  <!-- Label for the return date field -->
+      <input type="date" class="form-control" id="return_date" name="return_date" value="{{ itinerary.return_date }}">  <!-- Input for the return date field with the current return date as the default value -->
+    </div>
+    <div class="form-group">  <!-- Form group for the hotel name field -->
+      <label for="hotel_name">Hotel Name</label>  <!-- Label for the hotel name field -->
+      <input type="text" class="form-control" id="hotel_name" name="hotel_name" value="{{ itinerary.hotel.name }}">  <!-- Input for the hotel name field with the current hotel name as the default value -->
+    </div>
+    <div class="form-group">  <!-- Form group for the hotel address field -->
+      <label for="hotel_address">Hotel Address</label>  <!-- Label for the hotel address field -->
+      <input type="text" class="form-control" id="hotel_address" name="hotel_address" value="{{ itinerary.hotel.address }}">  <!-- Input for the hotel address field with the current hotel address as the default value -->
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>  <!-- Submit button for the form -->
+    <a href="{% url 'itinerary_list' %}" class="btn btn-secondary">Return</a>  <!-- Return button that redirects to the itinerary list -->
+  </form>
+{% endblock %}  <!-- End of the content block -->
+
+

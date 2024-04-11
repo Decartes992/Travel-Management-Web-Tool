@@ -1,0 +1,18 @@
+{% extends 'base.html' %}  <!-- Extends the base template -->
+
+{% block title %}  <!-- Title block that will be inserted into the base template -->
+  Delete Itinerary
+{% endblock %}
+
+{% block content %}  <!-- Content block that will be inserted into the base template -->
+  <div class="jumbotron transparent-bg">  <!-- Jumbotron with a semi-transparent background -->
+    <h1>Delete Itinerary</h1>  <!-- Page title -->
+    <p>Are you sure you want to delete this itinerary?</p>  <!-- Confirmation message -->
+    <form method="post">  <!-- Form for deleting the itinerary -->
+      {% csrf_token %}  <!-- CSRF token for security -->
+      <button type="submit" class="btn btn-danger">Yes</button>  <!-- Yes button that submits the form -->
+      <a href="{% url 'itinerary_list' %}" class="btn btn-secondary">No</a>  <!-- No button that redirects to the itinerary list -->
+    </form>
+  </div>
+{% endblock %}  <!-- End of the content block -->
+

@@ -1,0 +1,25 @@
+{% extends 'base.html' %}  <!-- Extends the base template -->
+{% load static %}  <!-- Loads the static files -->
+
+{% block title %}  <!-- Title block that will be inserted into the base template -->
+  Contact - Iftekhar Hossain Rafi
+{% endblock %}
+
+{% block content %}  <!-- Content block that will be inserted into the base template -->
+  <div class="card mb-3 transparent-bg" style="max-width: 540px;">  <!-- Card with a semi-transparent background and a maximum width -->
+    <div class="row g-0">  <!-- Bootstrap row with no gutters -->
+      <div class="col-md-4">  <!-- Bootstrap column for the image -->
+        <img src="{% static 'images/my_photo.jpg' %}" class="img-fluid rounded-start" alt="Iftekhar Hossain Rafi">  <!-- Image with a rounded start -->
+      </div>
+      <div class="col-md-8">  <!-- Bootstrap column for the text -->
+        <div class="card-body">  <!-- Card body for the text -->
+          <h5 class="card-title">Iftekhar Hossain Rafi</h5>  <!-- Card title -->
+          <p class="card-text">Dalhousie ID: B00871031</p>  <!-- Card text for the Dalhousie ID -->
+          <p class="card-text">Email: iftekhar.rafi@dal.ca</p>  <!-- Card text for the email -->
+          <p class="card-text">Phone: 9023243992</p>  <!-- Card text for the phone number -->
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}  <!-- End of the content block -->
+
