@@ -24,6 +24,14 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Traveltool\manage.py" />
+    <Compile Include="Traveltool\traveltoolapp\admin.py" />
+    <Compile Include="Traveltool\traveltoolapp\apps.py" />
+    <Compile Include="Traveltool\traveltoolapp\migrations\__init__.py" />
+    <Compile Include="Traveltool\traveltoolapp\models.py" />
+    <Compile Include="Traveltool\traveltoolapp\tests.py" />
+    <Compile Include="Traveltool\traveltoolapp\urls.py" />
+    <Compile Include="Traveltool\traveltoolapp\views.py" />
+    <Compile Include="Traveltool\traveltoolapp\__init__.py" />
     <Compile Include="Traveltool\Traveltool\asgi.py" />
     <Compile Include="Traveltool\Traveltool\settings.py" />
     <Compile Include="Traveltool\Traveltool\urls.py" />
@@ -52,6 +60,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Traveltool\" />
+    <Folder Include="Traveltool\traveltoolapp\" />
+    <Folder Include="Traveltool\traveltoolapp\migrations\" />
     <Folder Include="Traveltool\Traveltool\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
